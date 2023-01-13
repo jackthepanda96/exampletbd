@@ -10,14 +10,17 @@ type Core struct {
 type UserHandler interface {
 	Add() echo.HandlerFunc
 	Update() echo.HandlerFunc
+	Delete() echo.HandlerFunc
 }
 
 type UserLogic interface {
 	AddUser(newUser Core) (Core, error)
 	Update()
+	Delete()
 }
 
 type UserData interface {
 	Insert(newUser Core) (Core, error)
 	Update(updatedData Core)
+	Delete()
 }
